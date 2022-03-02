@@ -1,25 +1,16 @@
 #include <QCoreApplication>
-class A
-{
-public:
-    int X;
-};
+#include <QDebug>
 
-class B
-{
-public:
-    int X;
-};
-
-class Stack
-{
-public:
-    int X;
-};
+using namespace std;
 
 int main(int argc, char *argv[])
 {
-    //QCoreApplication a(argc, argv);
+    QCoreApplication a(argc, argv);
 
-    return 1; //a.exec();
+    for(int i=0;i<11;i++)
+        //тут должно быть заполнение стека
+
+    for(int i=0; i<12; i++)
+        //"опустошение" стека
+    return a.exec();
 }
