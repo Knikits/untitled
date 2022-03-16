@@ -9,7 +9,9 @@ private:
     std::string first_name;
     std::string patronymic;
 public:
-    Person(const Person&);
+    Person(const std::string & last_name = "", const std::string & first_name = "", const std::string & patronymic = "");
+    Person& operator=(Person const& person); //присвоение
+    Person(const Person&); //копирование
     const std::string& getLastName() const { return last_name; }
     const std::string& getFirstName() const { return first_name; }
     const std::string& getPatronymic() const { return patronymic; }
