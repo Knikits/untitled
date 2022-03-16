@@ -10,14 +10,14 @@ private:
     PersonKeeper(){}
     PersonKeeper operator=(const PersonKeeper &);
 public:
-    static PersonKeeper & intance()
+    static PersonKeeper & instance()
     {
         static PersonKeeper PK;
         return PK;
     }
     // методы класса PersonKeeper
     Stack<Person> readPersons(std::fstream&); //будет возвращает стек, который уже заполнен ФИО
-    void wridePerson(const Stack<Person> &); //будет записывать в поток из стека ФИО
+    void writePersons(const Stack<Person> &); //будет записывать в поток из стека ФИО
 };
 
 #endif // PERSONKEEPER_H
