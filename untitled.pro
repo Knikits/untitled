@@ -19,6 +19,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     EStackException.h \
+    Person.h \
     PersonKeeper.h \
     Stack.h
 >>>>>>> Adding the PersonKeeper
