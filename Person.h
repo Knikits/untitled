@@ -16,8 +16,9 @@ public:
     const std::string& getFirstName() const { return first_name; }
     const std::string& getPatronymic() const { return patronymic; }
     void setLastName(const std::string&);
-    void setFirstame(const std::string&);
+    void setFirstName(const std::string&);
     void getPatronymic(const std::string&);
+    char* String();
 };
 
 #endif // PERSON_H
