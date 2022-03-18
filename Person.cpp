@@ -26,11 +26,18 @@ Person::Person(Person const& person)
 char* Person::String()
 {
     int length = last_name.length() + first_name.length() + patronymic.length() + 3; //+3 для пробелов и перехода на новую строку
-    char* name = new char[length];
+    char* FIO = new char[length];
     long long unsigned i = 0;
     for(i = 0; i < last_name.length(); i++)
-        name[i] = last_name[i];
+        FIO[i] = last_name[i];
     name[i] = ' ';
     i++;
-    // i общая для записи, но не для подсчитывания символов в каждом слове ...
+    int j = 0;
+    for(; i < first_name.length(); i++; j++)
+        FIO[i] = first_name[j];
+    name[i] = ' ';
+    i++;
+    for(; i < first_name.length(); i++; j++)
+        FIO[i] = patronymic[j];
+    name[i] = '\0'; // конец для строки ФИО
 }
