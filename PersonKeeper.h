@@ -4,6 +4,9 @@
 #include "Person.h"
 #include <fstream>
 
+//Реализация класса PersonKeeper с методами readPersons и writePersons
+//Класс PersonKeeper реализован в соответствии с шаблоном Singleton
+//instace() используется для того, чтобы пользоваться единственным экземпляром класса
 class PersonKeeper
 {
 private:

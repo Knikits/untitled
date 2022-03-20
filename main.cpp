@@ -12,24 +12,13 @@ using namespace std;
 
 //сначала создаём функции, и только потом пишем их содержимое
 void cheakread();
-void checkexceptionstack();
-
-//главная функция
-int main(int argc, char *argv[])
-{
-    QCoreApplication a(argc, argv);
-    cheakread();
-    //checkexceptionstack();
-    return a.exec();
-}
-
 
 void cheakread()
 {
     Stack<Person> stack;
-    stack.Push(Person("Merkushev Kornelii Oskarovich"));
     stack.Push(Person("Savelev Iulii Alekseevich"));
-    stack.Push(Person("Subbotin Vissarion Frolovich"));
+    stack.Push(Person("Nosova Svetlana Kupriyanovna"));
+    stack.Push(Person("Kazakova Mariana Denisovna"));
     std::fstream stream("D:\\Lab_1\\FIO.txt", std::ios::out);
     try
     {
@@ -62,6 +51,9 @@ void cheakread()
     }
 }
 
+/*
+void checkexceptionstack();
+
 void checkexceptionstack()
 {
     Stack<int> stack; //создаём экземпляр класса Stack
@@ -71,12 +63,17 @@ void checkexceptionstack()
         qDebug() << stack.Pop() << ' '; //опустошение стека с исключением, когда чисел больше нет
 }
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
+<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 
+=======
+*/
+>>>>>>> All remarks
 
 //главная функция
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
@@ -109,3 +106,9 @@ int main(int argc, char *argv[])
 }
 =======
 >>>>>>> !!!!
+=======
+    cheakread();
+    //checkexceptionstack();
+    return a.exec();
+}
+>>>>>>> All remarks

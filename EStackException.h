@@ -10,12 +10,14 @@ public:
     EStackException(const char* arg_message)
     {
         message = new char[strlen(arg_message) + 1];
-        strcpy(message, arg_message);
+        for (int j = 0; j < strlen(arg_message) + 1; j++)
+                            message[j] = arg_message[j];
     }
     EStackException(const EStackException& arg)
     {
         message = new char[strlen(arg.message) + 1];
-        strcpy(message, arg.message);
+        for (int j = 0; j < strlen(arg.message) + 1; j++)
+                            message[j] = arg.message[j];
     }
     ~EStackException()
     {
