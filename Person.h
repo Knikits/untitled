@@ -15,9 +15,9 @@ public:
     const std::string& getLastName() const { return last_name; }
     const std::string& getFirstName() const { return first_name; }
     const std::string& getPatronymic() const { return patronymic; }
-    void setLastName(const std::string&);
-    void setFirstName(const std::string&);
-    void getPatronymic(const std::string&);
+    void setLastName(const std::string& last_name) {this->last_name = last_name;}
+    void setFirstName(const std::string& first_name) {this->first_name = first_name;}
+    void getPatronymic(const std::string& patronymic){this->patronymic = patronymic;}
     char* String();
 };
 
