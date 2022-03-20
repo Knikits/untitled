@@ -6,16 +6,20 @@ Stack<Person> PersonKeeper::readPersons()
     std::string FIO[9];
     Stack<Person> stack;
     for (; ;)
+    {
+        for (int i = 0; i < 10; i++)
         {
-            for (int i = 0; i < 10; i++)
+            try
             {
-                try{
-                    *this->stream >> FIO[i];
-                }catch (const std::ios_base::failure&){
-                    return stack;
-                }
+                *this->stream >> FIO[i];
+            }
+            catch (const std::ios_base::failure&)
+            {
+                return stack;
             }
         }
+         stack.Push(Person(FIO[0], FIO[1], FIO[2]));
+     }
 }
 
 void PersonKeeper::writePersons(const Stack<Person> &input)
