@@ -36,17 +36,23 @@ char* Person::String()
     char* FIO = new char[length];
     long long unsigned i = 0;
     for(i = 0; i < last_name.length(); i++)
+    {
         FIO[i] = last_name[i];
-    name[i] = ' ';
+    }
+    FIO[i] = ' ';
     i++;
     // переменная i нужна для каждого из слов ФИО, а j понадобится для отдельно взятого слова
     int j = 0;
-    for(; j < first_name.length(); i++; j++)
+    for(; j < first_name.length(); i++, j++)
+    {
         FIO[i] = first_name[j];
-    name[i] = ' ';
+    }
+    FIO[i] = ' ';
     i++;
-    for(j = 0; j < patronymic.length(); i++; j++)
+    for(j = 0; j < patronymic.length(); i++, j++)
+    {
         FIO[i] = patronymic[j];
-    name[i] = '\0'; // конец для строки ФИО
+    }
+    FIO[i] = '\0'; // конец для строки ФИО
     return FIO;
 }
