@@ -22,7 +22,7 @@ public:
     }
     // методы класса PersonKeeper
     Stack<Person> readPersons(); //будет возвращает стек, который уже заполнен ФИО
-    void writePersons(const Stack<Person> &); //будет записывать в поток из стека ФИО
+    void writePersons(const Stack<Person> &); //будет брать стек с ФИО
 };
 
 #endif // PERSONKEEPER_H
