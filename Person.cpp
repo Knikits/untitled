@@ -1,31 +1,27 @@
 #include "Person.h"
 
+// конструктор ФИО
 Person::Person(const std::string & last_name, const std::string & first_name, const std::string & patronymic)
 {
     this->last_name = last_name;
-
     this->first_name = first_name;
-
     this->patronymic = patronymic;
 }
 
+// оператор присвоения
 Person& Person::operator=(const Person &person)
 {
     this->last_name = person.last_name;
-
-    this->first_name = person.first_name;
-
+    this->first_name = person.first_name; // экземпляры класса Person
     this->patronymic = person.patronymic;
-
     return *this;
 }
 
+// оператор присвоения
 Person::Person(Person const& person)
 {
     this->last_name = person.last_name;
-
-    this->first_name = person.first_name;
-
+    this->first_name = person.first_name; // экземпляры класса Person
     this->patronymic = person.patronymic;
 }
 
@@ -37,22 +33,22 @@ char* Person::String()
     long long unsigned i = 0;
     for(i = 0; i < last_name.length(); i++)
     {
-        FIO[i] = last_name[i];
+        FIO[i] = last_name[i]; // записывается фамилия
     }
-    FIO[i] = ' ';
-    i++;
-    // переменная i нужна для каждого из слов ФИО, а j понадобится для отдельно взятого слова
+    FIO[i] = ' '; // ставится пробел
+    i++; // переход к имени
+    // переменная i нужна для всего ФИО, а j понадобится для отдельно взятого слова (фамилия, имя, отчество)
     int j = 0;
     for(; j < first_name.length(); i++, j++)
     {
-        FIO[i] = first_name[j];
+        FIO[i] = first_name[j]; // записывается имя
     }
-    FIO[i] = ' ';
-    i++;
+    FIO[i] = ' '; // ставится пробел
+    i++; // переход к отчеству
     for(j = 0; j < patronymic.length(); i++, j++)
     {
-        FIO[i] = patronymic[j];
+        FIO[i] = patronymic[j]; // записывается отчество
     }
     FIO[i] = '\0'; // конец для строки ФИО
-    return FIO;
+    return FIO; // возвращаем char
 }
