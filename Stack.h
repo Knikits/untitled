@@ -8,17 +8,17 @@
 #include "EStackException.h"
 #include <iostream>
 
-//класс стека - шаблонный
+// Класс стека - шаблонный
 
 template<typename T>
 class Stack
 {
 private:
-    class Node
+    class Node // создан при помощи композиции
     {
     public:
-        T value;
-        Node* next;
+        T value; // значение
+        Node* next; // указатель на следующий элемент
 
         Node(T value, Node* next = nullptr)
         {
@@ -26,12 +26,14 @@ private:
             this->next = next;
         }
     };
-    Node* top = nullptr;
-    int size = 0;
+    Node* top = nullptr; // указатель на вершину стека
+    int size = 0; // размер стека
 public:
-    void Push(T value);
-    T Pop();
-    int Len();
+    void Push(T value); // предназначен для добавления узла на вершину стека
+                        // принимает на вход новое значения из вершиы стека и ничего не возвращает
+    T Pop(); // для вытаскивания значения из вершины стека
+             // возвращает значение типа Т из вершины стека и ничего не принимает
+    int Len(); // возвращает размер стека
     //добавляем конструкторы
     Stack<T>& operator=(const Stack<T>&); //присваивание
     Stack<T>(const Stack<T>& stack); //копирование
@@ -44,14 +46,14 @@ public:
 template<typename T>
 void Stack<T>::Push(T value)
 {
-    size++;
-    if (top == nullptr)
+    size++; // каждый раз увеличивается стек на один
+    if (top == nullptr) // если вершина пуста
     {
-        top = new Node(value);
+        top = new Node(value); // то создаём новую вершину
         return;
     }
-    Node* prevTop = top;
-    top = new Node(value, prevTop);
+    Node* prevTop = top; // в противном случае смещается старая вершина
+    top = new Node(value, prevTop); // создаётся новый узел
 }
 >>>>>>> Ready Stack.h
 
@@ -62,25 +64,25 @@ T Stack<T>::Pop()
 {
     try
     {
-        if (size == 0) throw EStackEmpty(); //при условии, что стек пуст,
-        //должно генерироваться исключение класса EStackEmpty(наследник класса EStackException)
+        if (size == 0) throw EStackEmpty(); //если стек пуст,
+        //генерируется исключение класса EStackEmpty(наследник класса EStackException)
     }
     catch (EStackEmpty& e)
     {
         qWarning(e.what());
     }
-    Node* newTop = top->next;
-    T return_value = top->value;
-    delete top;
-    top = newTop;
-    size--;
-    return return_value;
+    Node* newTop = top->next; // иначе запоминается следующий элемент после вершины
+    T return_value = top->value; // и значение в этой вершине
+    delete top; // чистим память в вершине
+    top = newTop; // смещаем новую вершину
+    size--; // уменьшается стек
+    return return_value; // возвращаем значение старой вершины
 }
 
 template<typename T>
 int Stack<T>::Len()
 {
-    return size;
+    return size; // возврат размера стека
 }
 >>>>>>> Remark
 
@@ -91,32 +93,32 @@ Stack<T>& Stack<T>::operator=(const Stack<T>& stack) //реализация оп
     Node *node = stack.top;
     for (int i = 0; i < stack.size; i++)
     {
-        inverse.Push(node->value);
+        inverse.Push(node->value); // производим инверсию стека
         node = node->next;
     }
     node = inverse.top;
     for (int i = 0; i < stack.size; i++)
     {
-        this->Push(node->value);
+        this->Push(node->value); // разворачиваем обратно
         node = node->next;
     }
     return *this;
 }
 
 template<typename T>
-Stack<T>::Stack(const Stack<T> &stack)
+Stack<T>::Stack(const Stack<T> &stack) // реализация конструктора копирования
 {
     Stack<T> inverse;
     Node *node = stack.top;
     for (int i = 0; i < stack.size; i++)
     {
-        inverse.Push(node->value);
+        inverse.Push(node->value); // производим инверсию стека
         node = node->next;
     }
     node = inverse.top;
     for (int i = 0; i < stack.size; i++)
     {
-        this->Push(node->value);
+        this->Push(node->value); // разворачиваем обратно
         node = node->next;
     }
 }
