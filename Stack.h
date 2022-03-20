@@ -38,6 +38,21 @@ public:
 };
 >>>>>>> Adding constructors in Stack
 
+<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
+=======
+template<typename T>
+void Stack<T>::Push(T value)
+{
+    size++;
+    if (top == nullptr)
+    {
+        top = new Node(value);
+        return;
+    }
+    Node* prevTop= top;
+    top = new Node(value, prevTop);
+}
+>>>>>>> Ready Stack.h
 
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 =======
