@@ -57,6 +57,18 @@ void cheakread()
     }
 }
 
+void checkexceptionstack();
+
+void checkexceptionstack()
+{
+    Stack<int> stack; //создаём экземпляр класса Stack
+    for(int i=0; i<11; i++)
+        stack.Push(i); //заполнение стека
+    for(int i=0; i<12; i++)
+        qDebug() << stack.Pop() << ' '; //опустошение стека с исключением, когда чисел больше нет
+}
+
+
 //главная функция
 int main(int argc, char *argv[])
 {
@@ -73,6 +85,7 @@ int main(int argc, char *argv[])
 =======
 =======
     cheakread();
+<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 >>>>>>> f of cheakread
     /*Stack<int> stack; //создаём стек
 >>>>>>> main
@@ -85,5 +98,8 @@ int main(int argc, char *argv[])
 =======
         qDebug() << stack.Pop() << ' '; //"опустошение" стека*/
 >>>>>>> main
+=======
+    //checkexceptionstack();
+>>>>>>> main2
     return a.exec();
 }
