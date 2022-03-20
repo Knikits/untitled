@@ -10,9 +10,58 @@ using namespace std;
 #include "Person.h"
 >>>>>>> main
 
+//сначала создаём функции, и только потом пишем их содержимое
+void cheakread();
+
+void cheakread()
+{
+    Stack<Person> stack;
+    stack.Push(Person("Меркушев Корнелий Оскарович"));
+    stack.Push(Person("Савельев Юлий Алексеевич"));
+    stack.Push(Person("Субботин Виссарион Фролович"));
+    stack.Push(Person("Федосеев Флор Никитевич"));
+    stack.Push(Person("Ермаков Корнелий Даниилович"));
+    stack.Push(Person("Смирнов Кондратий Филиппович"));
+    stack.Push(Person("Гуляев Бенедикт Созонович"));
+    stack.Push(Person("Маслов Артем Геннадьевич"));
+    stack.Push(Person("Никонов Герасим Русланович"));
+    std::fstream stream("D:\\Учёба\\ТГУ\\Lab_1\\FIO.txt", std::ios::out);
+    try
+    {
+        if(!stream.is_open())
+            throw std::ios_base::failure("Error1");
+    }
+    catch (std::ios_base::failure& e)
+    {
+        qWarning() << e.what();
+    }
+    PersonKeeper::instance(&stream).writePersons(stack);
+    if (stream.is_open())
+        stream.close();
+
+    stream.open("D:\\Учёба\\ТГУ\\Lab_1\\FIO.txt", std::ios::in);
+    try
+    {
+        if(!stream.is_open())
+            throw std::ios_base::failure("Error2");
+    }
+    catch (std::ios_base::failure& e)
+    {
+        qWarning() << e.what();
+    }
+    Stack<Person> stack2 = PersonKeeper::instance(&stream).readPersons();
+
+    for (; 0 < stack2.Len();)
+    {
+        qDebug() << stack2.Pop().String() << '\n';
+    }
+}
+
+//главная функция
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 
@@ -22,6 +71,9 @@ int main(int argc, char *argv[])
 =======
     Stack<int> stack; //создаём стек
 =======
+=======
+    cheakread();
+>>>>>>> f of cheakread
     /*Stack<int> stack; //создаём стек
 >>>>>>> main
     for(int i=0; i<11;i++)
