@@ -3,11 +3,11 @@
 Stack<Person> PersonKeeper::readPersons()
 {
     this->stream->exceptions(std::ios_base::eofbit);
-    std::string FIO[9];
+    std::string FIO[3];
     Stack<Person> stack;
     for (; ;)
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 3; i++)
         {
             try
             {

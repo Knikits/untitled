@@ -64,7 +64,7 @@ T Stack<T>::Pop()
         if (size == 0) throw EStackEmpty(); //при условии, что стек пуст,
         //должно генерироваться исключение класса EStackEmpty(наследник класса EStackException)
     }
-    catch (const EStackEmpty& e)
+    catch (EStackEmpty& e)
     {
         qWarning(e.what());
     }

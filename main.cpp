@@ -19,12 +19,6 @@ void cheakread()
     stack.Push(Person("Меркушев Корнелий Оскарович"));
     stack.Push(Person("Савельев Юлий Алексеевич"));
     stack.Push(Person("Субботин Виссарион Фролович"));
-    stack.Push(Person("Федосеев Флор Никитевич"));
-    stack.Push(Person("Ермаков Корнелий Даниилович"));
-    stack.Push(Person("Смирнов Кондратий Филиппович"));
-    stack.Push(Person("Гуляев Бенедикт Созонович"));
-    stack.Push(Person("Маслов Артем Геннадьевич"));
-    stack.Push(Person("Никонов Герасим Русланович"));
     std::fstream stream("D:\\Учёба\\ТГУ\\Lab_1\\FIO.txt", std::ios::out);
     try
     {
