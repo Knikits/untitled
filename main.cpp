@@ -12,14 +12,25 @@ using namespace std;
 
 //сначала создаём функции, и только потом пишем их содержимое
 void cheakread();
+void checkexceptionstack();
+
+//главная функция
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+    cheakread();
+    //checkexceptionstack();
+    return a.exec();
+}
+
 
 void cheakread()
 {
     Stack<Person> stack;
-    stack.Push(Person("Меркушев Корнелий Оскарович"));
-    stack.Push(Person("Савельев Юлий Алексеевич"));
-    stack.Push(Person("Субботин Виссарион Фролович"));
-    std::fstream stream("D:\\Учёба\\ТГУ\\Lab_1\\FIO.txt", std::ios::out);
+    stack.Push(Person("Merkushev Kornelii Oskarovich"));
+    stack.Push(Person("Savelev Iulii Alekseevich"));
+    stack.Push(Person("Subbotin Vissarion Frolovich"));
+    std::fstream stream("D:\\Lab_1\\FIO.txt", std::ios::out);
     try
     {
         if(!stream.is_open())
@@ -33,7 +44,7 @@ void cheakread()
     if (stream.is_open())
         stream.close();
 
-    stream.open("D:\\Учёба\\ТГУ\\Lab_1\\FIO.txt", std::ios::in);
+    stream.open("D:\\Lab_1\\FIO.txt", std::ios::in);
     try
     {
         if(!stream.is_open())
@@ -51,8 +62,6 @@ void cheakread()
     }
 }
 
-void checkexceptionstack();
-
 void checkexceptionstack()
 {
     Stack<int> stack; //создаём экземпляр класса Stack
@@ -61,6 +70,7 @@ void checkexceptionstack()
     for(int i=0; i<12; i++)
         qDebug() << stack.Pop() << ' '; //опустошение стека с исключением, когда чисел больше нет
 }
+<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 
 
 //главная функция
@@ -97,3 +107,5 @@ int main(int argc, char *argv[])
 >>>>>>> main2
     return a.exec();
 }
+=======
+>>>>>>> !!!!

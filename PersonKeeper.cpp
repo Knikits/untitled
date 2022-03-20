@@ -3,7 +3,7 @@
 Stack<Person> PersonKeeper::readPersons()
 {
     this->stream->exceptions(std::ios_base::eofbit);
-    std::string FIO[3];
+    std::string name[3];
     Stack<Person> stack;
     for (; ;)
     {
@@ -11,14 +11,14 @@ Stack<Person> PersonKeeper::readPersons()
         {
             try
             {
-                *this->stream >> FIO[i];
+                *this->stream >> name[i];
             }
             catch (const std::ios_base::failure&)
             {
                 return stack;
             }
         }
-         stack.Push(Person(FIO[0], FIO[1], FIO[2]));
+        stack.Push(Person(name[0], name[1], name[2]));
      }
 }
 

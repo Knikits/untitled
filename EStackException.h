@@ -9,15 +9,13 @@ private:
 public:
     EStackException(const char* arg_message)
     {
-        message = new char[strlen(arg_message)+1];
-        for (long long unsigned j = 0; j < strlen(arg_message) + 1; j++)
-                    message[j] = arg_message[j];
+        message = new char[strlen(arg_message) + 1];
+        strcpy(message, arg_message);
     }
     EStackException(const EStackException& arg)
     {
-        message = new char[strlen(arg.message)+1];
-        for (long long unsigned j = 0; j < strlen(arg.message) + 1; j++)
-                    message[j] = arg.message[j];
+        message = new char[strlen(arg.message) + 1];
+        strcpy(message, arg.message);
     }
     ~EStackException()
     {

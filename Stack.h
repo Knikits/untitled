@@ -19,6 +19,7 @@ private:
     public:
         T value;
         Node* next;
+
         Node(T value, Node* next = nullptr)
         {
             this->value = value;
