@@ -49,7 +49,7 @@ void Stack<T>::Push(T value)
         top = new Node(value);
         return;
     }
-    Node* prevTop= top;
+    Node* prevTop = top;
     top = new Node(value, prevTop);
 }
 >>>>>>> Ready Stack.h
@@ -61,19 +61,12 @@ T Stack<T>::Pop()
 {
     try
     {
-        if (top == nullptr) throw EStackEmpty(); //при условии, что стек пуст,
+        if (size == 0) throw EStackEmpty(); //при условии, что стек пуст,
         //должно генерироваться исключение класса EStackEmpty(наследник класса EStackException)
     }
     catch (const EStackEmpty& e)
     {
         qWarning(e.what());
-    }
-    if (top->next == nullptr)
-    {
-        T value = top->value;
-        delete top;
-        top = nullptr;
-        return value;
     }
     Node* newTop = top->next;
     T return_value = top->value;
