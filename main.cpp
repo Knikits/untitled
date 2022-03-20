@@ -10,7 +10,7 @@ using namespace std;
 #include "Person.h"
 >>>>>>> main
 
-//сначала создаём функции, и только потом пишем их содержимое
+//сначала создаём функции, а потом пишем их содержимое
 void cheakread();
 
 void cheakread()
@@ -23,7 +23,7 @@ void cheakread()
     try
     {
         if(!stream.is_open())
-            throw std::ios_base::failure("Error1");
+            throw std::ios_base::failure("Error1"); // если не открывается, выводим ошибку
     }
     catch (std::ios_base::failure& e)
     {
@@ -31,7 +31,7 @@ void cheakread()
     }
     PersonKeeper::instance(&stream).writePersons(stack);
     if (stream.is_open())
-        stream.close();
+        stream.close(); // и закрываем, если ещё открыт
 
     stream.open("D:\\Lab_1\\FIO.txt", std::ios::in);
     try
@@ -47,7 +47,7 @@ void cheakread()
 
     for (; 0 < stack2.Len();)
     {
-        qDebug() << stack2.Pop().String() << '\n';
+        qDebug() << stack2.Pop().String() << '\n'; // записываем фио и на переходим новую строку
     }
 }
 
@@ -57,9 +57,9 @@ void checkexceptionstack();
 void checkexceptionstack()
 {
     Stack<int> stack; //создаём экземпляр класса Stack
-    for(int i=0; i<11; i++)
+    for(int i = 0; i < 11; i++)
         stack.Push(i); //заполнение стека
-    for(int i=0; i<12; i++)
+    for(int i = 0; i < 12; i++)
         qDebug() << stack.Pop() << ' '; //опустошение стека с исключением, когда чисел больше нет
 }
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
@@ -69,10 +69,11 @@ void checkexceptionstack()
 */
 >>>>>>> All remarks
 
-//главная функция
+// Главная функция
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
 <<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
@@ -108,6 +109,9 @@ int main(int argc, char *argv[])
 >>>>>>> !!!!
 =======
     cheakread();
+=======
+    cheakread(); // функция чтения
+>>>>>>> Finished main.cpp
     //checkexceptionstack();
     return a.exec();
 }
