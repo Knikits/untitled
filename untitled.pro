@@ -16,12 +16,9 @@ SOURCES += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-=======
 
 HEADERS += \
     EStackException.h \
     Person.h \
     PersonKeeper.h \
     Stack.h
->>>>>>> Adding the PersonKeeper

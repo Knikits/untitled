@@ -1,14 +1,9 @@
 #include <QCoreApplication>
 #include <QDebug>
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-
-using namespace std;
-=======
 #include <Stack.h>
 #include <fstream>
 #include "PersonKeeper.h"
 #include "Person.h"
->>>>>>> main
 
 //сначала создаём функции, а потом пишем их содержимое
 void cheakread();
@@ -53,7 +48,6 @@ void cheakread()
 
 /*
 void checkexceptionstack();
-
 void checkexceptionstack()
 {
     Stack<int> stack; //создаём экземпляр класса Stack
@@ -62,57 +56,13 @@ void checkexceptionstack()
     for(int i = 0; i < 12; i++)
         qDebug() << stack.Pop() << ' '; //опустошение стека с исключением, когда чисел больше нет
 }
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-
-=======
 */
->>>>>>> All remarks
 
 // Главная функция
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-
-    for(int i=0;i<11;i++)
-        //тут должно быть заполнение стека
-
-=======
-    Stack<int> stack; //создаём стек
-=======
-=======
-    cheakread();
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
->>>>>>> f of cheakread
-    /*Stack<int> stack; //создаём стек
->>>>>>> main
-    for(int i=0; i<11;i++)
-        stack.Push(i); //заполнение стека
->>>>>>> Remarks2
-    for(int i=0; i<12; i++)
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-        //"опустошение" стека
-=======
-        qDebug() << stack.Pop() << ' '; //"опустошение" стека*/
->>>>>>> main
-=======
-    //checkexceptionstack();
->>>>>>> main2
-    return a.exec();
-}
-=======
->>>>>>> !!!!
-=======
-    cheakread();
-=======
     cheakread(); // функция чтения
->>>>>>> Finished main.cpp
     //checkexceptionstack();
     return a.exec();
 }
->>>>>>> All remarks

@@ -1,9 +1,5 @@
 #ifndef STACK_H
 #define STACK_H
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-#include "estackexceptions.h"
-
-=======
 #include <QDebug>
 #include "EStackException.h"
 #include <iostream>
@@ -39,10 +35,7 @@ public:
     Stack<T>(const Stack<T>& stack); //копирование
     Stack<T>(){};
 };
->>>>>>> Adding constructors in Stack
 
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-=======
 template<typename T>
 void Stack<T>::Push(T value)
 {
@@ -55,10 +48,7 @@ void Stack<T>::Push(T value)
     Node* prevTop = top; // в противном случае смещается старая вершина
     top = new Node(value, prevTop); // создаётся новый узел
 }
->>>>>>> Ready Stack.h
 
-<<<<<<< 3124eb98bf561978b0064eadc173fe55c4b876aa
-=======
 template<typename T>
 T Stack<T>::Pop()
 {
@@ -84,7 +74,6 @@ int Stack<T>::Len()
 {
     return size; // возврат размера стека
 }
->>>>>>> Remark
 
 template<typename T>
 Stack<T>& Stack<T>::operator=(const Stack<T>& stack) //реализация оператора присваивания
