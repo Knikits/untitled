@@ -11,9 +11,28 @@ void cheakread();
 void cheakread()
 {
     Stack<Person> stack;
-    stack.Push(Person("Savelev Iulii Alekseevich"));
-    stack.Push(Person("Nosova Svetlana Kupriyanovna"));
-    stack.Push(Person("Kazakova Mariana Denisovna"));
+    int n = 0;
+    switch (n)
+    {
+    case 0:
+        stack.Push(Person("Savelev Iulii Alekseevich"));
+        stack.Push(Person("Nosova Svetlana Kupriyanovna")); // ввожу 3 ФИО в стек
+        stack.Push(Person("Kazakova Mariana Denisovna"));;
+        break;
+    case 1:
+        stack.Push(Person("Savelev Iulii Alekseevich"));
+        stack.Push(Person("Nosova Svetlana Kupriyanovna"));
+        stack.Push(Person("Kazakova Mariana Denisovna")); // ввожу 6 ФИО в стек
+        stack.Push(Person("Kostryukov Nikita Sergeevich"));
+        stack.Push(Person("Marshal Dmitryi Olegovich"));
+        stack.Push(Person("Emeljanenko Denis Vladimirovich"));
+        break;
+    case 2:
+        stack.Push(Person("Волков Владислав Николаевич"));
+        stack.Push(Person("Степичев Николай Михайлович")); // ввожу 3 ФИО (на русском), ломается кодировка
+        stack.Push(Person("Кондратенко Илья Никитович"));
+        break;
+    }
     std::fstream stream("D:\\Lab_1\\FIO.txt", std::ios::out);
     try
     {
@@ -24,7 +43,7 @@ void cheakread()
     {
         qWarning() << e.what();
     }
-    PersonKeeper::instance(&stream).writePersons(stack);
+    PersonKeeper::instance(&stream).writePersons(stack); // далее записываю ФИО в файл по пути, указанному выше
     if (stream.is_open())
         stream.close(); // и закрываем, если ещё открыт
 
@@ -42,7 +61,7 @@ void cheakread()
 
     for (; 0 < stack2.Len();)
     {
-        qDebug() << stack2.Pop().String() << '\n'; // записываем фио и на переходим новую строку
+        qDebug() << stack2.Pop().String() << '\n'; // записываем фио, переходим новую строку и прочитываем из файла наши ФИО
     }
 }
 
