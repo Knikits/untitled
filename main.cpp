@@ -11,7 +11,7 @@ void cheakread();
 void cheakread()
 {
     Stack<Person> stack;
-    int n = 0;
+    int n = 1;
     switch (n)
     {
     case 0:
@@ -30,7 +30,7 @@ void cheakread()
     case 2:
         stack.Push(Person("Волков Владислав Николаевич"));
         stack.Push(Person("Степичев Николай Михайлович")); // ввожу 3 ФИО (на русском), ломается кодировка
-        stack.Push(Person("Кондратенко Илья Никитович"));
+        stack.Push(Person("Кондратенко Илья Никитович")); // по очертанию в выводе можно понять, что именно отработка корректна
         break;
     }
     std::fstream stream("D:\\Lab_1\\FIO.txt", std::ios::out);
