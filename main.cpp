@@ -11,7 +11,7 @@ void cheakread();
 void cheakread()
 {
     Stack<Person> stack;
-    int n = 1;
+    int n = 1; // n=0 для примерной работы!
     switch (n)
     {
     case 0:
@@ -21,21 +21,11 @@ void cheakread()
         break;
     case 1:
         stack.Push(Person("", "", ""));
-        stack.Push(Person("Nosova", "Svetlana", "Kupriyanovna"));
+        stack.Push(Person("Nosova", "-", "Kupriyanovna"));
         stack.Push(Person("Kazakova", "Mariana", "Denisovna")); // ввожу 6 ФИО в стек
-        stack.Push(Person("Kostryukov", "Nikita", "Sergeevich"));
-        stack.Push(Person("Marshal", "Dmitryi", "Olegovich"));
-        stack.Push(Person("Emeljanenko", "Denis", "Vladimirovich"));
-        break;
-    case 2:
-        stack.Push(Person("Волков", "Владислав", "Николаевич"));
-        stack.Push(Person("Степичев", "Николай", "Михайлович")); // ввожу 3 ФИО (на русском), ломается кодировка
-        stack.Push(Person("Кондратенко", "Илья", "Никитович")); // по очертанию в выводе можно понять, что именно отработка корректна
-        break;
-    case 3:
-        stack.Push(Person(" "));
-        stack.Push(Person(" ")); // для тестирования приложения
-        stack.Push(Person(" "));
+        stack.Push(Person("Kostryukov", "-", "-"));
+        stack.Push(Person("Marshal", "Dmitryi", "-"));
+        stack.Push(Person("-", "Denis", "Vladimirovich"));
         break;
     }
     std::fstream stream("D:\\Lab_1\\FIO.txt", std::ios::out); // файл создаётся втоматически и далее заполняется
@@ -50,7 +40,7 @@ void cheakread()
     }
     PersonKeeper::instance(&stream).writePersons(stack); // далее записываю ФИО в файл по пути, указанному выше
     if (stream.is_open())
-        stream.close(); // и закрываем, если ещё открыт
+        stream.close(); // и закрываем
 
     stream.open("D:\\Lab_1\\FIO.txt", std::ios::in);
     try
