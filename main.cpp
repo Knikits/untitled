@@ -32,12 +32,17 @@ void cheakread()
         stack.Push(Person("Степичев Николай Михайлович")); // ввожу 3 ФИО (на русском), ломается кодировка
         stack.Push(Person("Кондратенко Илья Никитович")); // по очертанию в выводе можно понять, что именно отработка корректна
         break;
+    case 3:
+        stack.Push(Person(" "));
+        stack.Push(Person(" ")); // для тестирования приложения
+        stack.Push(Person(" "));
+        break;
     }
-    std::fstream stream("D:\\Lab_1\\FIO.txt", std::ios::out);
+    std::fstream stream("D:\\Lab_1\\FIO.txt", std::ios::out); // файл создаётся втоматически и далее заполняется
     try
     {
         if(!stream.is_open())
-            throw std::ios_base::failure("Error1"); // если не открывается, выводим ошибку
+            throw std::ios_base::failure("Error1"); // если не открывается, выводим ошибку1
     }
     catch (std::ios_base::failure& e)
     {
@@ -51,7 +56,7 @@ void cheakread()
     try
     {
         if(!stream.is_open())
-            throw std::ios_base::failure("Error2");
+            throw std::ios_base::failure("Error2"); // если не открывается, выводим ошибку2
     }
     catch (std::ios_base::failure& e)
     {
@@ -66,7 +71,7 @@ void cheakread()
 }
 
 /*
-void checkexceptionstack();
+void checkexceptionstack(); // для первой части лабы
 void checkexceptionstack()
 {
     Stack<int> stack; //создаём экземпляр класса Stack
