@@ -10,7 +10,7 @@
 class PersonKeeper
 {
 private:
-    PersonKeeper(){}
+    PersonKeeper(){} // конструтор по умолчанию
     PersonKeeper operator=(const PersonKeeper &); // оператор равенства
     PersonKeeper(const PersonKeeper&); // копирование
     std::fstream* stream = nullptr; // создаем нулевой указатель
