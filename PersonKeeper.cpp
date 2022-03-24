@@ -3,7 +3,7 @@
 // преобразование потока в поле класса PersonKeeper
 Stack<Person> PersonKeeper::readPersons()
 {
-    this->stream->exceptions(std::ios_base::eofbit);
+    this->stream->exceptions(std::ios_base::eofbit); // генерация исключения
     Stack<Person> stack;
     std::string fio[3];
     for (; ;)
@@ -16,10 +16,11 @@ Stack<Person> PersonKeeper::readPersons()
             }
             catch (const std::ios_base::failure&)
             {
+                stack.Push(Person( fio[0],  fio[1],  fio[2]));
                 return stack;
             }
         }
-        stack.Push(Person( fio[0],  fio[1],  fio[2])); // отправляем в стек
+        stack.Push(Person( fio[0],  fio[1],  fio[2])); // отправляем в стек фамилию имя отчество
      }
 }
 
@@ -28,7 +29,7 @@ void PersonKeeper::writePersons(const Stack<Person> &input)
     Stack<Person> stack = input;
     for(; 0 < stack.Len();)
     {
-        *this->stream << stack.Pop().String(); // записываем в файл все ФИО
+        *this->stream << stack.Pop().String(); // вытаскиваем из стека ФИО
         if(stack.Len() != 0)
             stream->put('\n'); // переходим на новую строку
     }

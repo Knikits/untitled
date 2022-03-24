@@ -30,7 +30,13 @@ char* Person::String()
 {
     int length = last_name.length() + first_name.length() + patronymic.length() + 3; //+3 для пробелов и знака о том, что строка окончена.
     char* FIO = new char[length];
-    long long unsigned i = 0;
+    int i = 0;
+    if (last_name.length() == 0)
+        last_name = '-';
+    if (first_name.length() == 0) // если где-то вводдим без имени, то ставится прочерки при чтении из файла
+        first_name = '-';
+    if (patronymic.length() == 0)
+        patronymic = '-';
     for(i = 0; i < last_name.length(); i++)
     {
         FIO[i] = last_name[i]; // записывается фамилия

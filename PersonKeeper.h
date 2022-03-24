@@ -11,13 +11,14 @@ class PersonKeeper
 {
 private:
     PersonKeeper(){}
-    PersonKeeper operator=(const PersonKeeper &);
-    std::fstream* stream = nullptr;
+    PersonKeeper operator=(const PersonKeeper &); // оператор равенства
+    PersonKeeper(const PersonKeeper&); // копирование
+    std::fstream* stream = nullptr; // создаем нулевой указатель
 public:
-    static PersonKeeper & instance(std::fstream* stream)
+    static PersonKeeper & instance(std::fstream* stream) // передаём указатель
     {
         static PersonKeeper PK;
-        PK.stream = stream;
+        PK.stream = stream; // инициализация указателя
         return PK;
     }
     // методы класса PersonKeeper

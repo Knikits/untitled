@@ -14,11 +14,11 @@ public:
     Person& operator=(Person const& person); //присвоение
     Person(const Person&); //копирование
     const std::string& getLastName() const { return last_name; }
-    const std::string& getFirstName() const { return first_name; } // из лекции
+    const std::string& getFirstName() const { return first_name; } // геттеры
     const std::string& getPatronymic() const { return patronymic; }
     char* String(); // для преобразования поля для сообщения QDebug
     void setLastName(const std::string& last_name) {this->last_name = last_name;}
-    void setFirstName(const std::string& first_name) {this->first_name = first_name;}
+    void setFirstName(const std::string& first_name) {this->first_name = first_name;} // сеттеры
     void setPatronymic(const std::string& patronymic){this->patronymic = patronymic;}
 };
 

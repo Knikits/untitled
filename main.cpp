@@ -15,22 +15,22 @@ void cheakread()
     switch (n)
     {
     case 0:
-        stack.Push(Person("Savelev Iulii Alekseevich"));
-        stack.Push(Person("Nosova Svetlana Kupriyanovna")); // ввожу 3 ФИО в стек
-        stack.Push(Person("Kazakova Mariana Denisovna"));;
+        stack.Push(Person("Savelev", "Iulii", "Alekseevich"));
+        stack.Push(Person("Nosova", "Svetlana", "Kupriyanovna")); // ввожу 3 ФИО в стек
+        stack.Push(Person("Kazakova", "Mariana", "Denisovna"));;
         break;
     case 1:
-        stack.Push(Person("Savelev Iulii Alekseevich"));
-        stack.Push(Person("Nosova Svetlana Kupriyanovna"));
-        stack.Push(Person("Kazakova Mariana Denisovna")); // ввожу 6 ФИО в стек
-        stack.Push(Person("Kostryukov Nikita Sergeevich"));
-        stack.Push(Person("Marshal Dmitryi Olegovich"));
-        stack.Push(Person("Emeljanenko Denis Vladimirovich"));
+        stack.Push(Person("", "", ""));
+        stack.Push(Person("Nosova", "Svetlana", "Kupriyanovna"));
+        stack.Push(Person("Kazakova", "Mariana", "Denisovna")); // ввожу 6 ФИО в стек
+        stack.Push(Person("Kostryukov", "Nikita", "Sergeevich"));
+        stack.Push(Person("Marshal", "Dmitryi", "Olegovich"));
+        stack.Push(Person("Emeljanenko", "Denis", "Vladimirovich"));
         break;
     case 2:
-        stack.Push(Person("Волков Владислав Николаевич"));
-        stack.Push(Person("Степичев Николай Михайлович")); // ввожу 3 ФИО (на русском), ломается кодировка
-        stack.Push(Person("Кондратенко Илья Никитович")); // по очертанию в выводе можно понять, что именно отработка корректна
+        stack.Push(Person("Волков", "Владислав", "Николаевич"));
+        stack.Push(Person("Степичев", "Николай", "Михайлович")); // ввожу 3 ФИО (на русском), ломается кодировка
+        stack.Push(Person("Кондратенко", "Илья", "Никитович")); // по очертанию в выводе можно понять, что именно отработка корректна
         break;
     case 3:
         stack.Push(Person(" "));
@@ -62,7 +62,7 @@ void cheakread()
     {
         qWarning() << e.what();
     }
-    Stack<Person> stack2 = PersonKeeper::instance(&stream).readPersons();
+    Stack<Person> stack2 = PersonKeeper::instance(&stream).readPersons(); // создаём переменную типа стек и присваем то, что придёт из стека
 
     for (; 0 < stack2.Len();)
     {
