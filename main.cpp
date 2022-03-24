@@ -6,8 +6,7 @@
 #include "Person.h"
 
 //сначала создаём функции, а потом пишем их содержимое
-void cheakread();
-
+void cheakread(); // для второй части лабы
 void cheakread()
 {
     Stack<Person> stack;
@@ -60,23 +59,23 @@ void cheakread()
     }
 }
 
-/*
+
 void checkexceptionstack(); // для первой части лабы
 void checkexceptionstack()
 {
     Stack<int> stack; //создаём экземпляр класса Stack
-    for(int i = 0; i < 11; i++)
+    for(int i = 1; i < 21; i++)
         stack.Push(i); //заполнение стека
-    for(int i = 0; i < 12; i++)
+    for(int i = 1; i < 22; i++)
         qDebug() << stack.Pop() << ' '; //опустошение стека с исключением, когда чисел больше нет
 }
-*/
+
 
 // Главная функция
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    cheakread(); // функция чтения
-    //checkexceptionstack();
+    //cheakread();
+    checkexceptionstack();
     return a.exec();
 }
