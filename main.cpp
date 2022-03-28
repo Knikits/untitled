@@ -67,7 +67,7 @@ void checkexceptionstack()
     for (int i = 1; i < 21; i++)
         stack.Push(i); //заполнение стека
     for (int i = 1; i < 22; i++)
-        qDebug() << stack.Pop() << ' '; //опустошение стека с исключением, когда чисел больше нет
+        qDebug() << stack.Pop(); //опустошение стека с исключением, когда чисел больше нет
 }
 
 
