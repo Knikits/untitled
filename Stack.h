@@ -1,6 +1,7 @@
 #ifndef STACK_H
 #define STACK_H
 #include <QDebug>
+#include <QtDebug>
 #include "EStackException.h"
 #include <iostream>
 
@@ -45,7 +46,7 @@ void Stack<T>::Push(T value)
         top = new Node(value); // то создаём новую вершину
         return;
     }
-    Node* prevTop = top; // смещается старая вершина
+    Node* prevTop = top; // в противном случае смещается старая вершина
     top = new Node(value, prevTop); // создаётся новый узел
 }
 
@@ -60,6 +61,7 @@ T Stack<T>::Pop()
     catch (EStackEmpty& e)
     {
         qWarning(e.what());
+        exit(-1);
     }
     Node* newTop = top->next; // запоминается следующий элемент после вершины
     T return_value = top->value; // и значение в этой вершине

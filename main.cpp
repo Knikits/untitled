@@ -4,7 +4,7 @@
 #include <fstream>
 #include "PersonKeeper.h"
 #include "Person.h"
-
+/*
 //сначала создаём функции, а потом пишем их содержимое
 void cheakread(); // для второй части лабы
 void cheakread()
@@ -58,15 +58,15 @@ void cheakread()
         qDebug() << stack2.Pop().String() << '\n'; // записываем фио, переходим новую строку и прочитываем из файла наши ФИО
     }
 }
-
+*/
 
 void checkexceptionstack(); // для первой части лабы
 void checkexceptionstack()
 {
     Stack<int> stack; //создаём экземпляр класса Stack
-    for(int i = 1; i < 21; i++)
+    for (int i = 1; i < 21; i++)
         stack.Push(i); //заполнение стека
-    for(int i = 1; i < 22; i++)
+    for (int i = 1; i < 22; i++)
         qDebug() << stack.Pop() << ' '; //опустошение стека с исключением, когда чисел больше нет
 }
 
