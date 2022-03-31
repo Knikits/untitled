@@ -17,8 +17,8 @@ Person& Person::operator=(const Person &person)
     return *this;
 }
 
-// оператор присвоения
-Person::Person(Person const& person)
+// копирование
+Person::Person(const Person &person)
 {
     this->last_name = person.last_name;
     this->first_name = person.first_name; // экземпляры класса Person
