@@ -1,4 +1,6 @@
 #include "Person.h"
+#include <QDebug>
+using namespace std;
 
 // конструктор ФИО
 Person::Person(const std::string & last_name, const std::string & first_name, const std::string & patronymic)
@@ -26,17 +28,11 @@ Person::Person(const Person &person)
 }
 
 //Нужно возвратить char* в виде строки
-char* Person::String()
+std::shared_ptr<char[]> Person::String()
 {
     int length = last_name.length() + first_name.length() + patronymic.length() + 3; //+3 для пробелов и знака о том, что строка окончена.
-    char* FIO = new char[length];
+    std::shared_ptr<char[]> FIO (new char[length]); // Выделение памяти под динамический массив
     int i = 0;
-    if (last_name.length() == 0)
-        last_name = '-';
-    if (first_name.length() == 0) // если где-то вводдим без имени, то ставится прочерки при чтении из файла
-        first_name = '-';
-    if (patronymic.length() == 0)
-        patronymic = '-';
     for(i = 0; i < last_name.length(); i++)
     {
         FIO[i] = last_name[i]; // записывается фамилия

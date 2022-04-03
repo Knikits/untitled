@@ -1,6 +1,19 @@
 #include "PersonKeeper.h"
 
 // преобразование потока в поле класса PersonKeeper
+
+void PersonKeeper::writePersons(const Stack<Person> &input) // стек не должен измениться
+{
+    Stack<Person> stack = input;
+    for(; 0 < stack.Len();)
+    {
+        *this->stream << stack.Pop().String(); // вытаскиваем из стека ФИО
+        if(stack.Len() != 0)
+            stream->put('\n'); // переходим на новую строку
+    }
+    stream->close();
+}
+
 Stack<Person> PersonKeeper::readPersons()
 {
     this->stream->exceptions(std::ios_base::eofbit); // генерация исключения
@@ -22,16 +35,4 @@ Stack<Person> PersonKeeper::readPersons()
         }
         stack.Push(Person( fio[0],  fio[1],  fio[2])); // отправляем в стек фамилию имя отчество
      }
-}
-
-void PersonKeeper::writePersons(const Stack<Person> &input)
-{
-    Stack<Person> stack = input;
-    for(; 0 < stack.Len();)
-    {
-        *this->stream << stack.Pop().String(); // вытаскиваем из стека ФИО
-        if(stack.Len() != 0)
-            stream->put('\n'); // переходим на новую строку
-    }
-    stream->close();
 }
