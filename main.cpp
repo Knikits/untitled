@@ -11,9 +11,9 @@ void cheakread()
 {
     Stack<Person> stack;
     // В задании подразумевается, что ни одно поле ФИО не может быть пустым
-    //stack.Push(Person("Volkov", "Denis", "Vladimirovich"));
-    //stack.Push(Person("Nosova-Morozova", "Svetlana", "Kupriyanovna")); // ввожу 3 ФИО в стек
-    //stack.Push(Person("Kazakova", "Mariana", "Denisovna"));
+    stack.Push(Person("Volkov", "Denis", "Vladi123456rovich"));
+    stack.Push(Person("Nosova-Morozova", "Svetlana", "Kupriyanovna")); // ввожу 3 ФИО в стек
+    stack.Push(Person("Kazakova", "Mariana", "Denisovna"));
 
     //Тестирование этого класса заключается в попытках передать ему разные входные данные и посмотреть, как он на это отреагирует.
 

@@ -1,5 +1,5 @@
 #include "PersonKeeper.h"
-
+#include "string.h"
 // преобразование потока в поле класса PersonKeeper
 
 void PersonKeeper::writePersons(const Stack<Person> &input) // стек не должен измениться
@@ -13,6 +13,19 @@ void PersonKeeper::writePersons(const Stack<Person> &input) // стек не д�
     }
     stream->close();
 }
+
+
+bool is_number(const std::string& s)
+{
+    int check;
+    for (int j = 0; j < s.length(); j++)
+    {
+        check = isdigit(s[j]);
+    }
+    return !s.empty() && std::find_if(s.begin(),
+        s.end(), [](unsigned char c) { return !std::isdigit(c); }) == s.end();
+}
+
 
 Stack<Person> PersonKeeper::readPersons()
 {
@@ -33,6 +46,8 @@ Stack<Person> PersonKeeper::readPersons()
                 return stack;
             }
         }
+        if (is_number(fio[0]))
+            fio[0] = "Error";
         stack.Push(Person( fio[0],  fio[1],  fio[2])); // отправляем в стек фамилию имя отчество
      }
 }
