@@ -10,10 +10,30 @@ void cheakread(); // для второй части лабы
 void cheakread()
 {
     Stack<Person> stack;
-    //  В задании подразумевается, что ни одно поле ФИО не может быть пустым
+    // В задании подразумевается, что ни одно поле ФИО не может быть пустым
+    //stack.Push(Person("Volkov", "Denis", "Vladimirovich"));
+    //stack.Push(Person("Nosova-Morozova", "Svetlana", "Kupriyanovna")); // ввожу 3 ФИО в стек
+    //stack.Push(Person("Kazakova", "Mariana", "Denisovna"));
+
+    //Тестирование этого класса заключается в попытках передать ему разные входные данные и посмотреть, как он на это отреагирует.
+
+    //При помещении данных в виде чисел (без “”) не даёт отработать программе, так как мы должны передавать std::string.
+
+    //При добавлении лишних пробелов или табов (перед или после слов) результат так же остаётся неизменным.
+    /*
+    stack.Push(Person("Volkov", "   Denis", "Vladimirovich"));
+    stack.Push(Person("Nosova", "Svetlana", "Kupriyanovna            "));  // ввожу 3 ФИО в стек
+    stack.Push(Person("Kazakova", " Mariana", "Denisovna"));
+    */
+
+    //При добавлении в стек пустых полей ФИО на выводе мы не увидим второй строки, что является допустимым,
+    //так как если мы не ничего не введём, то мы ничего и не увидим по итогу.
+    /*
     stack.Push(Person("Volkov", "Denis", "Vladimirovich"));
-    stack.Push(Person("Nosova-Morozova", "Svetlana", "Kupriyanovna")); // ввожу 3 ФИО в стек
+    stack.Push(Person("", "", "")); // ввожу 3 ФИО в стек
     stack.Push(Person("Kazakova", "Mariana", "Denisovna"));
+    */
+
     std::fstream stream("D:\\Lab_1\\FIO.txt", std::ios::out); // файл создаётся автоматически и далее заполняется
     try
     {
