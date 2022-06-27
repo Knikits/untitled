@@ -50,11 +50,26 @@ void cheakread()
 void checkexceptionstack(); // для первой части лабы
 void checkexceptionstack()
 {
+    // классический вариант работы
     Stack<int> stack; //создаём экземпляр класса Stack
     for (int i = 1; i < 21; i++)
         stack.Push(i); //заполнение стека
     for (int i = 1; i < 22; i++)
         qDebug() << stack.Pop(); //опустошение стека с исключением, когда чисел больше нет
+
+    // вариант, когда в стек пуст
+    /*
+    Stack<int> stack;
+    stack.Pop();
+    */
+
+    // вариант, когда записываем в стек один символ
+    /*
+    Stack<int> A;
+    A.Push(100);
+    qDebug() << A.Pop();
+    */
+
 }
 
 
