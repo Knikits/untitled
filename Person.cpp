@@ -22,32 +22,30 @@ Person::Person(const std::string & last_name, const std::string & first_name, co
     if (is_number(last_name))
     {
         this->last_name = "-ERROR-";
-        this->first_name = first_name;
-        this->patronymic = patronymic;
+        if (is_number(first_name))
+        {
+            this->first_name = "-ERROR-";
+        }
+        else this->first_name = first_name;
+        if (is_number(patronymic))
+        {
+            this->patronymic = "-ERROR-";
+        }
+        else this->patronymic = patronymic;
     }
-    if (is_number(first_name))
+    if (!is_number(last_name))
     {
         this->last_name = last_name;
-        this->first_name = "-ERROR-";
-        this->patronymic = patronymic;
-    }
-    if (is_number(patronymic))
-    {
-        this->last_name = last_name;
-        this->first_name = first_name;
-        this->patronymic = "-ERROR-";
-    }
-    if (is_number(last_name) && is_number(first_name) && is_number(patronymic))
-    {
-        this->last_name = "-ERROR-";
-        this->first_name = "-ERROR-";
-        this->patronymic ="-ERROR-";
-    }
-    if (!is_number(last_name) && !is_number(first_name) && !is_number(patronymic))
-    {
-        this->last_name = last_name;
-        this->first_name = first_name;
-        this->patronymic = patronymic;
+        if (is_number(first_name))
+        {
+            this->first_name = "-ERROR-";
+        }
+        else this->first_name = first_name;
+        if (is_number(patronymic))
+        {
+            this->patronymic = "-ERROR-";
+        }
+        else this->patronymic = patronymic;
     }
 }
 
