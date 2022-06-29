@@ -10,12 +10,27 @@ void cheakread(); // для второй части лабы
 void cheakread()
 {
     Stack<Person> stack;
-    // В задании подразумевается, что ни одно поле ФИО не может быть пустым
-    stack.Push(Person("Volkov", "Denis", "Vladi123456rovich"));
-    stack.Push(Person("Nosova-Morozova", "Svetlana", "Kupriyanovna")); // ввожу 3 ФИО в стек
+    // В задании подразумевается, что ни одно поле ФИО не может быть пустым и не должно быть цифр
+    stack.Push(Person("Volkov", "Denis", "Vladimirovich"));
+    stack.Push(Person("Nosova-Morozova", "Svetlana", "Kupriyanovna")); // ввожу 4 ФИО в стек
     stack.Push(Person("Kazakova", "Mariana", "Denisovna"));
+    stack.Push(Person("Koster", "Oleg", "Ivanovich"));
 
     //Тестирование этого класса заключается в попытках передать ему разные входные данные и посмотреть, как он на это отреагирует.
+
+    //Если при вводе ФИО случайным образом ввести цифру или число, то ПО заменит это слово на -ERROR-
+    /*
+    stack.Push(Person("Vol7kov", "Denis", "Vladimirovich"));
+    stack.Push(Person("Nosova-Morozova", "Svetlana", "Kupriy6anovna")); // ввожу 4 ФИО в стек
+    stack.Push(Person("Kazakova", "Mariana", "Denisovna"));
+    stack.Push(Person("Koster", "Ol9999999eg", "Ivanovich"));
+    */
+    /*
+    stack.Push(Person("Vol78kov", "Den7is", "Vladimiro7vich"));
+    stack.Push(Person("Nosova86-Morozova", "Svetl6ana", "Ku7priy6anovna")); // ввожу 4 ФИО в стек
+    stack.Push(Person("Kazak73ova", "Mar5iana", "Deniso5vna"));
+    stack.Push(Person("Kost6er", "Ol9999999eg", "Ivano6vich"));
+    */
 
     //При помещении данных в виде чисел (без “”) не даёт отработать программе, так как мы должны передавать std::string.
 
@@ -62,7 +77,7 @@ void cheakread()
 
     for (; 0 < stack2.Len();)
     {
-        qDebug() << stack2.Pop().String().get() << '\n'; // записываем фио, переходим новую строку и прочитываем из файла наши ФИО
+        qDebug() << stack2.Pop().String().get(); // записываем фио, переходим новую строку и прочитываем из файла наши ФИО
     }
 }
 

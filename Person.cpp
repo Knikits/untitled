@@ -2,12 +2,53 @@
 #include <QDebug>
 using namespace std;
 
+bool is_number(std::string line)
+{
+    const std::string numbers = "0123456789";
+    for (int x = 0; x < (int)(line.size()); x++)
+    {
+        for (int y = 0; y < (int)(numbers.size()); y++)
+        {
+            if (numbers[y] == line[x])
+                return true;
+        }
+    }
+    return false;
+}
+
 // конструктор ФИО
 Person::Person(const std::string & last_name, const std::string & first_name, const std::string & patronymic)
 {
-    this->last_name = last_name;
-    this->first_name = first_name;
-    this->patronymic = patronymic;
+    if (is_number(last_name))
+    {
+        this->last_name = "-ERROR-";
+        this->first_name = first_name;
+        this->patronymic = patronymic;
+    }
+    if (is_number(first_name))
+    {
+        this->last_name = last_name;
+        this->first_name = "-ERROR-";
+        this->patronymic = patronymic;
+    }
+    if (is_number(patronymic))
+    {
+        this->last_name = last_name;
+        this->first_name = first_name;
+        this->patronymic = "-ERROR-";
+    }
+    if (is_number(last_name) && is_number(first_name) && is_number(patronymic))
+    {
+        this->last_name = "-ERROR-";
+        this->first_name = "-ERROR-";
+        this->patronymic ="-ERROR-";
+    }
+    if (!is_number(last_name) && !is_number(first_name) && !is_number(patronymic))
+    {
+        this->last_name = last_name;
+        this->first_name = first_name;
+        this->patronymic = patronymic;
+    }
 }
 
 // оператор присвоения
